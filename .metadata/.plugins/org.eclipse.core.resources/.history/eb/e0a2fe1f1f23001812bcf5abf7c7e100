@@ -1,0 +1,15 @@
+package com.example.demo;
+
+import java.util.Currency;
+
+public class AtmWithDrawTransaction {
+	public Integer atmID;
+	public Integer accountID;
+	public String cardNumber;
+	public Currency amount;
+	public Byte[] transactionImage;
+	
+	
+	
+
+}

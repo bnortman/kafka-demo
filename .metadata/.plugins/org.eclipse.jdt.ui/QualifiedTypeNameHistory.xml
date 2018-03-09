@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="org.apache.logging.log4j.Logger"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="com.example.demo.KafkaATMTransactionProducer"/>
+<fullyQualifiedTypeName name="org.springframework.kafka.core.KafkaTemplate"/>
+</qualifiedTypeNameHistroy>

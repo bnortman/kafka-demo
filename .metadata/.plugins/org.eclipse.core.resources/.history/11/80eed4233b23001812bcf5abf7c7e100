@@ -1,0 +1,28 @@
+package com.example.demo;
+
+import java.util.Currency;
+import java.util.Random;
+
+public class KafkaLoadRunner implements Runnable {
+
+	public Boolean keepRunning = true;
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		KafkaATMTransactionProducer atmProducer = new KafkaATMTransactionProducer();
+		Random rnd = new Random();
+				
+		while (this.keepRunning) {
+			Integer atmID = rnd.nextInt(6000);
+			Integer accountID = rnd.nextInt(600000);
+			String cardNumber = "4365-" + rnd.nextInt(8000)+1000 + "-" + rnd.nextInt(8000)+1000 + "-" + rnd.nextInt(8000)+1000;
+			Currency amount;
+			Byte[] transactionImage;
+			AtmWithDrawTransaction atwt = new AtmWithDrawTransaction(atmID, accountID, cardNumber, amount, transactionImage);
+			atmProducer.send(atwt);
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,34 @@
+package com.example.demo;
+
+import org.slf4j.*;
+import com.example.demo.AtmWithDrawTransaction;
+import com.google.gson.Gson;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Component;
+
+@Component
+public class KafkaATMTransactionProducer {
+	private static final Logger log = LoggerFactory.getLogger(KafkaATMTransactionProducer.class.getName());
+	
+	@Autowired
+	private KafkaTemplate<String, String> kafkaTemplate;
+	
+	Gson gson = new Gson();
+	
+	public void send(AtmWithDrawTransaction atwt) {
+		//Get Topic Configuration
+		String topic = "withdrawls";
+		//Convert to JSON
+		
+		String jsonATMWithDraw = gson.toJson(atwt);
+		
+		kafkaTemplate.send(topic,jsonATMWithDraw);
+		
+		
+	}
+
+	
+}

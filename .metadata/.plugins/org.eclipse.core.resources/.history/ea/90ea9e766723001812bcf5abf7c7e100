@@ -1,0 +1,14 @@
+package com.example.demo;
+
+public class KafkaListener implements Runnable {
+
+	public void run() {
+		
+	}
+
+	public void stop() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
