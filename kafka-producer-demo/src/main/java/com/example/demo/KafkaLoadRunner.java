@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 public class KafkaLoadRunner implements Runnable {
 	private static final Logger log = LoggerFactory.getLogger(KafkaLoadRunner.class.getName());
 
-	public Boolean keepRunning = true;
+	public volatile Boolean keepRunning = true;
 	
 	public void stop() {
 		keepRunning = false;
