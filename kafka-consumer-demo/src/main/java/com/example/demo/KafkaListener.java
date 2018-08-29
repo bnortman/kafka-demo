@@ -19,7 +19,7 @@ public class KafkaListener implements Runnable {
 		
 	}
 
-	public Boolean keepRunning = true;
+	public volatile Boolean keepRunning = true;
 	
 	public void stop() {
 		keepRunning = false;
